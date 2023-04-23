@@ -1,0 +1,33 @@
+.card__title {
+  color: #070705;
+  font-weight: 700;
+}
+.post__date {
+  color: #000000;
+  font-weight: 700;
+}
+.post__author {
+  color: #000000;
+  font-weight: 700;
+  font-size: 14px;
+}
+.card__post {
+  padding: 1rem;
+  border: #000000 2px solid;
+  margin: 0.7rem 0;
+  background-color: rgba(118, 182, 231, 0.8);
+  ransition: background-color 1s linear;
+}
+.card__post:hover {
+  background-color: #3b5a6c;
+
+}
+.btn-logo__block {
+  display: flex;
+  justify-content: space-between;
+  }
+.post-logo {
+  height: 35px;
+  width: 50px;
+
+}

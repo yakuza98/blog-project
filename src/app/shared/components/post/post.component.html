@@ -1,0 +1,17 @@
+<div class="card__post">
+  <div class="card-header">
+    <h2 class="card__title">{{ post.title }}</h2>
+
+    <small class="post__date">{{post.date | date:'dd.MM.yyyy'}}</small>
+  </div>
+  <div>
+    <small class="post__author">{{post.author}}</small>
+  </div>
+  <div class="btn-logo__block">
+    <button
+      [routerLink]="['/post', post.id]"
+      class="btn btn-primary">
+      Open</button>
+    <img class="post-logo" [src]="postLogo" alt="angular_icon">
+  </div>
+</div>

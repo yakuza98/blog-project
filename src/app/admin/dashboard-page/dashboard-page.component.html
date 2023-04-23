@@ -1,0 +1,45 @@
+<div *ngIf="posts.length; else loading">
+<div class="form-control">
+  <input
+    [(ngModel)]="searchStr"
+    type="text"
+    placeholder="Find a post..."
+  >
+</div>
+  <table>
+  <thead>
+  <tr>
+<!--    Name of columns (заголовок) <th>#</th>-->
+    <th>#</th>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Doing</th>
+  </tr>
+  </thead>
+  <tbody>
+<!-- add my filter pipe(для фільтрації інпуту) через 2 way binding.-->
+  <tr *ngFor="let post of posts | searchPosts:searchStr; let idx = index">
+    <td>{{idx + 1}}</td>
+    <td>{{post.author}}</td>
+    <td>{{post.title}}</td>
+    <td>{{post.date | date: 'medium'}}</td>
+    <td>
+      <button
+        class="btn btn-link open"
+        [routerLink]="['/admin', 'post', post.id, 'edit']"
+      >
+        Open
+      </button>
+      <a (click)="remove(post.id)">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+    <ng-template #loading>
+      <div class="spinner-time">
+        <div class="spinner"></div>
+      </div>
+    </ng-template>

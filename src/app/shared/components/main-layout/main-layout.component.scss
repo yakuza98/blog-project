@@ -1,0 +1,29 @@
+.header-layout {
+  background-image: url("https://www.yarddiant.com/images/how-to-build-a-website-using-angular.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+.navbar__title {
+  font-size: 18px;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif ;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #3e7fa8;
+  transition: font-size 0.2s linear;
+}
+.navbar__title:hover {
+  font-size: 35px;
+  color: white;
+}
+.img__nav {
+  height: 70px;
+  width: 70px;
+  transition: 0.2s linear;
+}
+.img__nav:hover{
+  height: 35px;
+  width: 35px;
+}

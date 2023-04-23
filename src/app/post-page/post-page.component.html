@@ -1,0 +1,24 @@
+<div *ngIf="post$ | async as post; else loading">
+  <div class="card__post-page">
+  <div class="header">
+    <h1>{{post.title}}</h1>
+    <button routerLink="/" class="btn btn-dark">Home Page</button>
+  </div>
+
+  <div class="info">
+    <strong>{{ post.author }}</strong>
+    <small><strong>Date:</strong> {{ post.date | date: 'medium'}}</small>
+  </div>
+
+  <div class="page__text-block">
+   <quill-view-html [content]="post.text"></quill-view-html>
+  </div>
+</div>
+</div>
+
+<ng-template #loading>
+  <div class="spinner-time">
+    <div class="spinner"></div>
+  </div>
+
+</ng-template>

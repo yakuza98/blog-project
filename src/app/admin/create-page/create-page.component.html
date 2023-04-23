@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Create a new post</h1>
+  <div
+    class="form-control"
+    [ngClass]="{
+    invalid: form.get('title').touched && form.get('title').invalid
+    }"
+  >
+    <label for="title">Title of post:</label>
+    <input id='title' type='text' formControlName="title">
+    <div
+      *ngIf="form.get('title').touched && form.get('title').invalid"
+      class="validation"
+
+    >
+      <small *ngIf="form.get('title').errors.required">
+        Enter title of post
+      </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Content of post</label>
+<!--    With npm i ngx-quill &#45;&#45;no-audit and npm i quill &#45;&#45;no-audit(плагін на редактор тексту) QuillModule.forRoot()-->
+    <quill-editor formControlName="text"></quill-editor>
+  </div>
+  <div
+    class="form-control"
+    [ngClass]="{
+    invalid: form.get('author').touched && form.get('author').invalid
+    }"
+  >
+    <label for="author">Author of post:</label>
+    <input id='author' type='text' formControlName="author">
+    <div
+      *ngIf="form.get('author').touched && form.get('author').invalid"
+      class="validation"
+
+    >
+      <small *ngIf="form.get('author').errors.required">
+        Enter author of post
+      </small>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-block btn-dark"
+    [disabled]="form.invalid"
+  >Create post</button>
+</form>
