@@ -16,6 +16,7 @@ export class PostPageComponent implements OnInit {
     private route: ActivatedRoute,
     private postsService: PostsService
   ) {
+
   }
   ngOnInit(){
       this.post$ = this.route.params
