@@ -1,4 +1,6 @@
-<div class="card__post">
+<div
+  [routerLink]="['/post', post.id]"
+  class="card__post">
   <div class="card-header">
     <h2 class="card__title">{{ post.title }}</h2>
 

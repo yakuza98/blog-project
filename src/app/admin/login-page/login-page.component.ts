@@ -48,7 +48,7 @@ export class LoginPageComponent implements OnInit {
     if (this.form.invalid) {
       return
     }
-    // Для блокування кнопки входу псля першого натискання
+    // Для блокування кнопки входу після першого натискання
     this.submitted = true
     const user: User = {
       email: this.form.value.email,
